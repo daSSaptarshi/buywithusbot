@@ -1,0 +1,269 @@
+.container
+{
+    background: url("../assets/bg.jpg");
+    background-color: #ffffff50;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.panel
+{
+    width: calc(100% - 150px);
+    height: calc(100% - 150px);
+    backdrop-filter: blur(15px);
+    background-color: rgba(0, 0, 0, 0.397);
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    padding: 40px;
+    border: 1px dashed #000000b6;
+    stroke-dashoffset: 3px;
+    
+}
+
+.panel > div:first-child
+{
+    /* border-right: 1px dashed #ffffff; */
+    padding-right: 40px;
+}
+
+.heading
+{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+    color: #ffffff;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.heading::after
+{
+    content: '';
+    width: 40px;
+    position: absolute;
+    height: 1px;
+    background: #ffffff;
+    left: 0;
+    bottom: 0;
+}
+
+.slider_container
+{
+    /* display: grid;
+    grid-template-columns: 80px 1fr 80px;
+    align-items: center;
+    
+    margin-top: 50px; */
+
+    width: 100%;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 20px;
+    /* padding: 40px; */
+    padding-bottom: 40px;
+}
+
+.slide
+{
+    width: 100%;
+    height: 300px;
+    background: #3f3f3f;
+    flex-shrink: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    justify-self: center;
+}
+
+.info
+{
+    display: grid;
+    grid-template-rows: 1fr 55px;
+    align-items: center;
+    height: 100%;
+    overflow: hidden;
+}
+
+.details
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-left: 20px;
+    /* backdrop-filter: blur(50px); */
+    height: 100%;
+    color: #ffffff;
+    font-size: 15px;
+    overflow: hidden;
+    background: #0000009e;
+    position: relative;
+}
+
+.details span:nth-child(1)
+{
+    position: absolute;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    left: 10px;
+    top: 8px;
+}
+.details span:nth-child(2)
+{
+    position: absolute;
+    font-size: 13px;
+    font-weight: 300;
+    text-transform: uppercase;
+    left: 10px;
+    bottom: 10px;
+}
+
+.details span:nth-child(3)
+{
+    position: absolute;
+    font-size: 17px;
+    font-weight: 600;
+    text-transform: uppercase;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.desc
+{
+    padding-right: 20px;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background: #0000009e;
+    padding: 10px 30px;
+    text-align: justify;
+    text-align-last: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffffcf;
+    opacity: 0;
+    transition: .3s;
+}
+
+.slide:hover .desc{
+    opacity: 1;
+    border-bottom: 1px solid #ffffff63;
+    transition: .3s;
+}
+
+/* -------------------------- contact form ----------------------------------- */
+.form_container form
+{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 20px;
+}
+
+.form_container form > div
+{
+    width: 100%;
+    display: grid;
+    grid-template-rows: 50px 50px;
+    row-gap: 20px;
+    /* padding-bottom: 30px; */
+}
+
+textarea
+{
+    margin-bottom: 40px;
+    min-height: 120px;
+    max-height: 120px;
+    resize: none;
+    border: 1px solid #cfcfcf;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.form_container form input[type='submit'],
+.submitForm
+{
+    width: min-content;
+    padding: 10px 30px;
+    background: #00bbff;
+    color: #ffffff;
+    /* border: 1px solid #67008a; */
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.form_container form input
+{
+    padding: 15px 15px;
+    border: 1px solid #cfcfcf;
+    max-height: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.message_box
+{
+    color: #33ff00;
+    font-size: 13px;
+    font-weight: 500;
+    padding-top: 15px;
+}
+
+.message_box img
+{
+    width: 40px;
+}
+
+/* ------------------------------------------ Chatbot -------------------------------------------- */
+
+chatbot
+{
+    align-self: center;
+}
+
+@media screen and (max-width: 1400px)
+{
+    .slide
+    {
+        height: 150px;
+        width: 100%;
+    }
+    .slide:hover .desc{
+        opacity: 0;
+    }
+    .slider_container{
+        width: 100%;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 20px;
+        padding-bottom: 40px;
+        row-gap: 20px;
+    }
+    .heading{
+        font-size: 20px;
+        font-weight: 500;
+        position: relative;
+        color: #ffffff;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+}

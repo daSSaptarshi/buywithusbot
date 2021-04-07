@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="panel">
+    <div>
+      <div class="heading">Popular Properties</div>
+      <div class="slider_container">
+        <div class="slide" *ngFor="let item of properties, let i=index" style="background: url('../assets/slider-{{i+1}}.jpg'); background-size: cover;
+      background-position: center;">
+          <div class="info">
+
+            <div class="desc">
+              {{item.desc}}
+            </div>
+            <div class="details">
+              <span>{{item.city}}</span>
+              <span>{{item.type}}</span>
+              <!-- <span>{{item.price | currency}} AUD</span> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="heading">Have a query? Get a callback from us</div>
+        <div class="form_container">
+          <form [formGroup]="queryForm" (ngSubmit)="sendQuery()">
+            <div>
+              <input type="text" name="firstname" id="firstname" formControlName="firstName" placeholder="First Name">
+              <input type="text" name="lastname" id="lastname" formControlName="lastName" placeholder="Last Name">
+            </div>
+            <div>
+              <input type="text" name="phone" id="phone" placeholder="Phone Number" formControlName="phone">
+              <input type="email" name="email" id="email" placeholder="Email" formControlName="email">
+            </div>
+            <textarea name="query" id="query" placeholder="Enter Query" formControlName="query"></textarea>
+            <input type="submit" value="Get Callback" class="submitForm">
+          </form>
+          <div class="message_box">All fields are required.</div>
+        </div>
+    </div>
+    <chatbot></chatbot>
+    <!-- <app-chat-bot></app-chat-bot> -->
+  </div>
+</div>
