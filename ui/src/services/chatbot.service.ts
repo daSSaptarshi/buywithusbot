@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class ChatbotService 
 {
-  baseURL: string = "/api/chat";
+  baseURL: string = "https://buywithus-chatbot.herokuapp.com/api/chat";
   constructor(private http: HttpClient) { }
 
   httpHeaders = {
