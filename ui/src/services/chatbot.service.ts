@@ -4,8 +4,9 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class ChatbotService {
-  baseURL: string = "https://tranquil-shore-56599.herokuapp.com/api/chat";
+export class ChatbotService 
+{
+  baseURL: string = "/api/chat";
   constructor(private http: HttpClient) { }
 
   httpHeaders = {
